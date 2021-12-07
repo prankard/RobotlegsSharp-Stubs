@@ -1,0 +1,7 @@
+namespace NamespaceName
+{
+	public class FileName : IFileName
+	{
+		
+	}
+}

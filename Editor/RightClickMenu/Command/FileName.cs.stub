@@ -1,0 +1,12 @@
+﻿using Robotlegs.Bender.Extensions.CommandCenter.API;
+
+namespace NamespaceName
+{
+	public class FileName : ICommand 
+	{
+		public void Execute ()
+		{
+			
+		}
+	}
+}

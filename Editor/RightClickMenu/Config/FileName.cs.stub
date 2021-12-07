@@ -1,0 +1,18 @@
+﻿using Robotlegs.Bender.Framework.API;
+using Robotlegs.Bender.Extensions.EventCommand.API;
+using Robotlegs.Bender.Extensions.Mediation.API;
+
+namespace NamespaceName
+{
+	public class FileName : IConfig 
+	{
+		[Inject] public IEventCommandMap commandMap;
+		[Inject] public IMediatorMap mediatorMap;
+		[Inject] public IInjector injector;
+	
+		public void Configure ()
+		{
+			
+		}
+	}
+}

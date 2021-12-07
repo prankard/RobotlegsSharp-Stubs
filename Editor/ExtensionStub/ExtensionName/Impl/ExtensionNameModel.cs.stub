@@ -1,0 +1,9 @@
+﻿using ExtensionNamespace.ExtensionName.API;
+
+namespace ExtensionNamespace.ExtensionName.Impl
+{
+	public class ExtensionNameModel : IExtensionNameModel
+	{
+
+	}
+}

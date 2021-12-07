@@ -1,0 +1,12 @@
+using Robotlegs.Bender.Bundles.MVCS;
+
+namespace NamespaceName
+{
+	public class FileName : Mediator
+	{
+		public override void Initialize ()
+		{
+			
+		}
+	}
+}

@@ -1,0 +1,14 @@
+﻿using Robotlegs.Bender.Framework.API;
+using ExtensionNamespace.ExtensionName.API;
+using ExtensionNamespace.ExtensionName.Impl;
+
+namespace ExtensionNamespace.ExtensionName
+{
+	public class ExtensionNameExtension : IExtension 
+	{
+		public void Extend (IContext context)
+		{
+			context.injector.Map<IExtensionNameModel>().ToSingleton<ExtensionNameModel>();
+		}
+	}
+}

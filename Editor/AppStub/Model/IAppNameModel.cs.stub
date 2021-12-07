@@ -1,0 +1,7 @@
+﻿namespace AppNamespace.Model
+{
+	public interface IAppNameModel
+	{
+		
+	}
+}

@@ -1,0 +1,9 @@
+﻿using Robotlegs.Bender.Extensions.Mediation.API;
+
+namespace NamespaceName
+{
+	public interface FileName : IEventView 
+	{
+		
+	}
+}

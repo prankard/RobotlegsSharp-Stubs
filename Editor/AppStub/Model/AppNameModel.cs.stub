@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+using System.Collections;
+
+namespace AppNamespace.Model
+{
+	public class AppNameModel : IAppNameModel
+	{
+		
+	}
+}

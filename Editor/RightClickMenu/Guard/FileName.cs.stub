@@ -1,0 +1,12 @@
+﻿using Robotlegs.Bender.Framework.API;
+
+namespace NamespaceName
+{
+	public class FileName : IGuard 
+	{
+		public bool Approve ()
+		{
+			return true;
+		}
+	}
+}

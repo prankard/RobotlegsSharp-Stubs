@@ -1,0 +1,15 @@
+﻿using Robotlegs.Bender.Framework.API;
+using AppNamespace.Model;
+
+namespace AppNamespace.Config
+{
+	public class AppNameConfig : IConfig 
+	{
+		[Inject] public IInjector injector;
+
+		public void Configure ()
+		{
+			injector.Map<IAppNameModel>().ToSingleton<AppNameModel>();
+		}
+	}
+}

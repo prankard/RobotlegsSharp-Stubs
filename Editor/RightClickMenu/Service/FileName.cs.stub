@@ -1,0 +1,11 @@
+using Robotlegs.Bender.Extensions.EventManagement.API;
+
+namespace NamespaceName
+{
+	public class FileName : IFileName
+	{
+		[Inject] public IEventDispatcher dispatcher;
+
+
+	}
+}

@@ -1,0 +1,17 @@
+﻿using Robotlegs.Bender.Extensions.EventManagement.Impl;
+
+namespace NamespaceName
+{
+	public class FileName : Event 
+	{
+		public enum Type
+		{
+			EVENT_NAME
+		}
+
+		public FileName (Type type) : base (type)
+		{
+			
+		}
+	}
+}

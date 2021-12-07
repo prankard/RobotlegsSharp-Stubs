@@ -1,0 +1,7 @@
+﻿namespace ExtensionNamespace.ExtensionName.API
+{
+	public interface IExtensionNameModel
+	{
+		
+	}
+}

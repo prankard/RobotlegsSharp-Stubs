@@ -1,0 +1,22 @@
+﻿using Robotlegs.Bender.Framework.API;
+using Robotlegs.Bender.Framework.Impl;
+using Robotlegs.Bender.Platforms.Unity.Bundles;
+using Robotlegs.Bender.Platforms.Unity.Extensions.ContextViews.Impl;
+using UnityEngine;
+using AppNamespace.Config;
+
+namespace AppNamespace
+{
+	public class Main : MonoBehaviour 
+	{
+		IContext context;
+
+		private void Start()
+		{
+			context = new Context();
+			context.Install<UnitySingleContextBundle>();
+			context.Configure<AppNameConfig>();
+			context.Configure(new TransformContextView(transform));
+		}
+	}
+}
