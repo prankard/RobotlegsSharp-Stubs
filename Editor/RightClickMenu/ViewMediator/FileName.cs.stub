@@ -1,0 +1,13 @@
+﻿using UnityEngine;
+using Robotlegs.Bender.Platforms.Unity.Extensions.Mediation.Impl;
+
+namespace NamespaceName
+{
+	public class FileName : EventView 
+	{
+		protected override void Start ()
+		{
+			base.Start ();
+		}
+	}
+}

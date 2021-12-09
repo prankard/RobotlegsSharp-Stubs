@@ -245,6 +245,12 @@ public class RobotlegsStubs : EditorWindow
 		CreateRobotlegsMediator();
 	}
 
+	[MenuItem("Assets/Create/Robotlegs/ViewMediator")]
+	static void CreateRobotlegsViewMediator1()
+	{
+		CreateRobotlegsViewMediator();
+	}
+
 	[MenuItem("Assets/Robotlegs/MonoBehaviour")]
 	static void CreateRobotlegsMonobehaviour()
 	{
@@ -315,6 +321,12 @@ public class RobotlegsStubs : EditorWindow
 	static void CreateRobotlegsMediator()
 	{
 		CreateRightClickFile("Mediator", "ExampleMediator", "Enter Mediator ClassName", RootPath + "/RightClickMenu/Mediator");
+	}
+
+	[MenuItem("Assets/Robotlegs/ViewMediator")]
+	static void CreateRobotlegsViewMediator()
+	{
+		CreateRightClickFile("ViewMediator", "ExampleView", "Enter View ClassName", RootPath + "/RightClickMenu/ViewMediator");
 	}
 
 	private static void CreateRightClickFile(string dialogTitle, string defaultFilename, string dialogDescription, string sourceFilePath, string dialogExtension = "cs")

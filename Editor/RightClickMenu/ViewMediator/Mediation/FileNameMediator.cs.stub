@@ -1,0 +1,14 @@
+using Robotlegs.Bender.Bundles.MVCS;
+
+namespace NamespaceName
+{
+	public class FileNameMediator : Mediator
+	{
+		[Inject] public FileName view;
+	
+		public override void Initialize ()
+		{
+			
+		}
+	}
+}
