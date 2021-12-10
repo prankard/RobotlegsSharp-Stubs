@@ -1,9 +1,12 @@
 ﻿using Robotlegs.Bender.Extensions.CommandCenter.API;
+using Robotlegs.Bender.Extensions.EventManagement.API;
 
-namespace NamespaceName
+namespace SquintOpera.Jodrell.ReachingOut.Controller.Command
 {
-	public class FileName : ICommand 
+	public class RebootCommand : ICommand
 	{
+		[Inject] public IEventDispatcher eventDispatcher;
+
 		public void Execute ()
 		{
 			
