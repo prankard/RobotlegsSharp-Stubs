@@ -22,7 +22,7 @@ public class RobotlegsStubs : EditorWindow
 		}
 	}
 
-	private static string GetMonoScriptPathFor(Type type)
+	public static string GetMonoScriptPathFor(Type type)
 	{
 		var asset = "";
 		var guids = AssetDatabase.FindAssets(string.Format("{0} t:script", type.Name));
@@ -173,163 +173,54 @@ public class RobotlegsStubs : EditorWindow
 		}
 	}
 
+	//[MenuItem("Assets/CreateStubFromFolder")]
+	public static void Test()
+    {
+		Debug.Log("This is a test");
+		if (Selection.activeObject == null)
+			return;
+
+		if (Selection.activeObject is DefaultAsset)
+        {
+			var folder = Selection.activeObject as DefaultAsset;
+			var rootPath = AssetDatabase.GetAssetPath(folder);
+			Debug.Log(rootPath);
+			if (Directory.Exists(rootPath))
+            {
+				Debug.Log("It's a folder");
+				var dirs = Directory.GetDirectories(rootPath);
+				var rootFolderName = Path.GetDirectoryName(rootPath);
+				foreach (var dir in dirs)
+                {
+					Debug.Log(dir);
+					var currentFolderName = Path.GetDirectoryName(dir);
+					// Content = =
+					/*
+					 
+
 	[MenuItem("Assets/Create/Robotlegs/MonoBehaviour")]
 	static void CreateRobotlegsMonobehaviour1()
 	{
 		CreateRobotlegsMonobehaviour();
 	}
 
-	[MenuItem("Assets/Create/Robotlegs/Config")]
-	static void CreateRobotlegsConfig1()
-	{
-		CreateRobotlegsConfig();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Command")]
-	static void CreateRobotlegsCommand1()
-	{
-		CreateRobotlegsCommand();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Guard")]
-	static void CreateRobotlegsGuard1()
-	{
-		CreateRobotlegsGuard();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Hook")]
-	static void CreateRobotlegsHook1()
-	{
-		CreateRobotlegsHook();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Event")]
-	static void CreateRobotlegsEvent1()
-	{
-		CreateRobotlegsEvent();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Model")]
-	static void CreateRobotlegsModel1()
-	{
-		CreateRobotlegsModel();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Service")]
-	static void CreateRobotlegsService1()
-	{
-		CreateRobotlegsService();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Parser")]
-	static void CreateRobotlegsParser1()
-	{
-		CreateRobotlegsParser();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/View")]
-	static void CreateRobotlegsView1()
-	{
-		CreateRobotlegsView();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/IView")]
-	static void CreateRobotlegsIView1()
-	{
-		CreateRobotlegsIView();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/Mediator")]
-	static void CreateRobotlegsMediator1()
-	{
-		CreateRobotlegsMediator();
-	}
-
-	[MenuItem("Assets/Create/Robotlegs/ViewMediator")]
-	static void CreateRobotlegsViewMediator1()
-	{
-		CreateRobotlegsViewMediator();
-	}
-
 	[MenuItem("Assets/Robotlegs/MonoBehaviour")]
 	static void CreateRobotlegsMonobehaviour()
 	{
-		CreateRightClickFile("MonoBehaviour", "ExampleMonoBehaviour", "Enter MonoBehaviour ClassName", RootPath + "/RightClickMenu/MonoBehaviour");
+		RobotlegsStubs.CreateRightClickFile("MonoBehaviour", "ExampleMonoBehaviour", "Enter MonoBehaviour ClassName", RootPath + "/RightClickMenu/MonoBehaviour");
 	}
+					 */
 
-	[MenuItem("Assets/Robotlegs/Config")]
-	static void CreateRobotlegsConfig()
-	{
-		CreateRightClickFile("Config", "ExampleConfig", "Enter Config ClassName", RootPath + "/RightClickMenu/Config");
-	}
 
-	[MenuItem("Assets/Robotlegs/Command")]
-	static void CreateRobotlegsCommand()
-	{
-		CreateRightClickFile("Command", "ExampleCommand", "Enter Command ClassName", RootPath + "/RightClickMenu/Command");
-	}
+					var prefix = "Assets/";
+					var s = "[MenuItem(\"" + prefix + rootFolderName + "/" + currentFolderName + "\")]";
+					Debug.Log(s);
+                }
+            }
+        }
+    }
 
-	[MenuItem("Assets/Robotlegs/Guard")]
-	static void CreateRobotlegsGuard()
-	{
-		CreateRightClickFile("Guard", "ExampleGuard", "Enter Guard ClassName", RootPath + "/RightClickMenu/Guard");
-	}
-
-	[MenuItem("Assets/Robotlegs/Hook")]
-	static void CreateRobotlegsHook()
-	{
-		CreateRightClickFile("Hook", "ExampleHook", "Enter Hook ClassName", RootPath + "/RightClickMenu/Hook");
-	}
-
-	[MenuItem("Assets/Robotlegs/Event")]
-	static void CreateRobotlegsEvent()
-	{
-		CreateRightClickFile("Event", "ExampleEvent", "Enter Event ClassName", RootPath + "/RightClickMenu/Event");
-	}
-
-	[MenuItem("Assets/Robotlegs/Model")]
-	static void CreateRobotlegsModel()
-	{
-		CreateRightClickFile("Model", "ExampleModel", "Enter Model ClassName", RootPath + "/RightClickMenu/Model");
-	}
-
-	[MenuItem("Assets/Robotlegs/Service")]
-	static void CreateRobotlegsService()
-	{
-		CreateRightClickFile("Service", "ExampleService", "Enter Service ClassName", RootPath + "/RightClickMenu/Service");
-	}
-
-	[MenuItem("Assets/Robotlegs/Parser")]
-	static void CreateRobotlegsParser()
-	{
-		CreateRightClickFile("Parser", "ExampleParser", "Enter Parser ClassName", RootPath + "/RightClickMenu/Parser");
-	}
-
-	[MenuItem("Assets/Robotlegs/View")]
-	static void CreateRobotlegsView()
-	{
-		CreateRightClickFile("View", "ExampleView", "Enter View ClassName", RootPath + "/RightClickMenu/View");
-	}
-
-	[MenuItem("Assets/Robotlegs/IView")]
-	static void CreateRobotlegsIView()
-	{
-		CreateRightClickFile("IView", "IExampleView", "Enter IView Interface Name", RootPath + "/RightClickMenu/IView");
-	}
-
-	[MenuItem("Assets/Robotlegs/Mediator")]
-	static void CreateRobotlegsMediator()
-	{
-		CreateRightClickFile("Mediator", "ExampleMediator", "Enter Mediator ClassName", RootPath + "/RightClickMenu/Mediator");
-	}
-
-	[MenuItem("Assets/Robotlegs/ViewMediator")]
-	static void CreateRobotlegsViewMediator()
-	{
-		CreateRightClickFile("ViewMediator", "ExampleView", "Enter View ClassName", RootPath + "/RightClickMenu/ViewMediator");
-	}
-
-	private static void CreateRightClickFile(string dialogTitle, string defaultFilename, string dialogDescription, string sourceFilePath, string dialogExtension = "cs")
+	public static void CreateRightClickFile(string dialogTitle, string defaultFilename, string dialogDescription, string sourceFilePath, string dialogExtension = "cs")
 	{
 		UnityEngine.Object activeObject = Selection.activeObject;
 		//UnityEngine.Debug.Log(activeObject);
